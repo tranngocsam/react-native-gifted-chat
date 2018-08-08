@@ -112,6 +112,14 @@ export default class MessageContainer extends React.PureComponent {
     return <Message {...messageProps} />;
   }
 
+  scrollToIndex = (params)=> {
+    if (!this.flatListRef) {
+      return;
+    }
+
+    this.flatListRef.scrollToIndex(params);
+  }
+
   renderHeaderWrapper() {
     return <View style={styles.headerWrapper}>{this.renderLoadEarlier()}</View>;
   }
